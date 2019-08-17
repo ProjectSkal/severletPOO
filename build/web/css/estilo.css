@@ -1,0 +1,100 @@
+body {
+    background-color: #edebeb;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: 80px;
+  overflow: hidden;
+  background-color: #333;
+  border-bottom: .30em solid #66FF66;
+  font-size: larger; 
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  list-style: none;
+  height: 10%;
+  
+}
+
+li a:hover {
+  background-color: #111;
+  color: #66FF66;
+  text-decoration: none;
+  height: 80px;
+}
+
+.let {
+    font-size: 30px;
+    margin-bottom: 5%;
+}
+
+.let2{
+    margin-top:  7%;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 4%;
+    padding-bottom: 6%
+}
+
+p {
+        text-align: center;
+        font-size: 20px;
+}
+
+.container {
+    width: 80ch;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5em 0;
+}
+
+form a {
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+    padding:  10px;
+    margin: 50px 8%;
+    border: 2px solid #66ff6b !important;
+    border-radius: 10px;
+}
+
+form .bt1 {
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+    float: right;
+    padding: 10px;
+    margin: 50px 45%;
+    border: 2px solid #66ff6b !important;
+    border-radius: 10px;
+}
+
+form a:hover {
+    text-align: center;
+    text-decoration: none;
+    background-color: #66FF66;
+    color:#000;
+    border: 1px solid #66FF66;
+    border-radius: 5px;
+    box-shadow: 5px #000 !important;
+}
+
+/*.btn {
+    transition: .5s;
+}*/
+
