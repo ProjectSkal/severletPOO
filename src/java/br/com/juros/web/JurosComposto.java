@@ -15,10 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Eliezer
+ * @author matus
  */
-@WebServlet(name = "home", urlPatterns = {"/home"})
-public class home extends HttpServlet {
+@WebServlet(name = "JurosComposto", urlPatterns = {"/juros-composto"})
+public class JurosComposto extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,31 +37,26 @@ public class home extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Integrantes - Juros POO</title>");    
             out.println("<link rel=\"shortcut icon\" href=\"imagens/images.png\">");
             out.println("<link rel=\"stylesheet\" href=\"css/bootstrap.min.css\">");
             out.println("<link rel=\"stylesheet\" href=\"css/estilo.css\">");
-            out.println("<meta name=viewport content=width=device-width, initial-scale=1.0>");
+            out.println("<title>Servlet JurosComposto</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println(" <ul>");
-            out.println("<li><a href='index.html'>Juros</a></li>");
-            out.println("<li><a href=#>Home</a></li>");
-            out.println("<li><a href=juros-simples>Juros Simples</a></li>");
-            out.println("<li><a href=juros-composto>Juros Composto</a></li>");
-            out.println("</ul>");
-            out.println("<div class=container>");
-            out.println("<h2>Integrantes do Grupo</h2>");
-            out.println("<p>Alex Vaz de Lima </p>");
-            out.println("<p>Helio Florença Faria </p>");
-            out.println("<p>Luiz Victor </p>");
-            out.println("<p>Matusalém Andrade dos Santos </p>");
+            out.println("<div class=\"container\">");
+            out.println("<h2>Juros Composto</h2>");
             out.println("<form>");
-            out.println("<a href='index.html' class=btn>Voltar</a>");
-            out.println("<a href=juros-simples class=btn>Juros Simples</a>");
-            out.println("<a href=juros-composto class=btn>Juros Composto</a>");
+            out.println("<div class=\"form-group\">");
+            out.println("<label for=\"valorInicial\">Valor inicial</label>");
+            out.println("<input type=\"number\" style=\"width:300px;\" class=\"form-control\" id=\"valorInicial\" \">");
+            out.println("<label for=\"valormensal\">Depósito mensal</label>");
+            out.println("<input type=\"number\" style=\"width:300px;\" class=\"form-control\" id=\"depositoMensal\" \">");
+            out.println("<label for=\"valorInicial\">Taxa de juros mensal(%)</label>");
+            out.println("<input type=\"number\" style=\"width:300px;\" class=\"form-control\" id=\"taxaJuros\" \">");
+            out.println("<label for=\"valorInicial\">Período(mês)</label>");
+            out.println("<input type=\"number\" style=\"width:300px;\" class=\"form-control\" id=\"período\" \">");
+            out.println("<a style=\"margin-left:0px;\"; href=montante-juros-composto class=btn>Submit</a>");            
             out.println("</form>");
-            out.println("</div>");
             out.println("</body>");
             out.println("</html>");
         }
