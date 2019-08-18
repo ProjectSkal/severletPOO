@@ -33,6 +33,19 @@ public class MontanteJurosComposto extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+//            int valorInicial = Integer.parseInt(request.getParameter("valorInicial"));
+//            double taxaMensal = Double.parseDouble(request.getParameter("taxaMensal"));
+//            double periodoMensal = Integer.parseInt(request.getParameter("periodoMensal"));
+            int vi =100;
+            double dm = 0;
+            double tx = 0.06;
+            int pm = 2;
+            double montante = 0;
+            double juros = tx+1;
+            for (int i = 1; i < pm; i++) {
+                juros *= juros;
+            }
+            montante = vi*juros;
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -40,7 +53,7 @@ public class MontanteJurosComposto extends HttpServlet {
             out.println("<title>Servlet MontanteJurosComposto</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet MontanteJurosComposto at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet MontanteJurosComposto at"+request.getParameter("valorInicial")+" </h1>");
             out.println("</body>");
             out.println("</html>");
         }
