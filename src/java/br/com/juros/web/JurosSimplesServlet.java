@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author helio
  */
-@WebServlet(name = "JurosSimplesServlet", urlPatterns = {"/juros-simples.html"})
+@WebServlet(name = "JurosSimplesServlet", urlPatterns = {"/juros-simples"})
 public class JurosSimplesServlet extends HttpServlet {
 
     /**
@@ -37,10 +37,25 @@ public class JurosSimplesServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet JurosSimplesServlet</title>");            
+            out.println("<link rel=\"shortcut icon\" href=\"imagens/images.png\">");
+            out.println("<link rel=\"stylesheet\" href=\"css/bootstrap.min.css\">");
+            out.println("<link rel=\"stylesheet\" href=\"css/estilo.css\">");
+            out.println("<title>Servlet JurosSimplesServlet</title>"); 
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet JurosSimplesServlet at " + request.getContextPath() + "</h1>");
+            out.println("<div class=\"container\">");
+            out.println("<h2>Juros Simples</h2>");
+            out.println("<form name=\"juros-simples-form\" method=\"post\" action=\"montante-juros-simples\">");
+            out.println("<div class=\"form-group\">");
+            out.println("<label for=\"valorPresente\">Valor presente(R$)</label>");
+            out.println("<input type=\"number\" style=\"width:300px;\" step=\"any\" class=\"form-control\" name=\"valorPresente\" \">");
+            out.println("<label for=\"taxaMensal\">Taxa de juros mensal(%)</label>");
+            out.println("<input type=\"number\" style=\"width:300px;\" step=\"any\" class=\"form-control\" name=\"taxaMensal\" \">");
+            out.println("<label for=\"periodo\">Período(mês)</label>");
+            out.println("<input type=\"number\" style=\"width:300px;\" class=\"form-control\" name=\"periodo\" \">");
+            out.println("<br/><input type=\"Submit\" class=btn style=\"margin-left:0px;\" value=\"Calcular\" />");
+            out.println("<a href='index.html' class=btn>Voltar</a>");           
+            out.println("</form>");
             out.println("</body>");
             out.println("</html>");
         }
