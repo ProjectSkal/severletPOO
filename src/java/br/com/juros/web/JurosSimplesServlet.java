@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author helio
  */
-@WebServlet(name = "JurosSimplesServlet", urlPatterns = {"/jurosSimples.html"})
+@WebServlet(name = "JurosSimplesServlet", urlPatterns = {"/juros-simples.html"})
 public class JurosSimplesServlet extends HttpServlet {
 
     /**
