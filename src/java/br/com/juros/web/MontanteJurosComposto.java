@@ -66,17 +66,35 @@ public class MontanteJurosComposto extends HttpServlet {
             double juros = tx+1;
             tx = tx+1;
             montante = valorInicial*juros;
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Integrantes - Juros POO</title>");    
+            out.println("<link rel=\"shortcut icon\" href=\"imagens/images.png\">");
+            out.println("<link rel=\"stylesheet\" href=\"css/bootstrap.min.css\">");
+            out.println("<link rel=\"stylesheet\" href=\"css/estilo.css\">");
+            out.println("<meta name=viewport content=width=device-width, initial-scale=1.0>");
+            out.println("</head>");
             out.println("<body>");
-            out.println("<table class=\"table table-striped\";border='1'>");
-            out.println("<thead class=\"thead-dark\">");
+            out.println(" <ul>");
+            out.println("<li><a href='index.html'>Juros</a></li>");
+            out.println("<li><a href=home>Home</a></li>");
+            out.println("<li><a href=juros-simples>Juros Simples</a></li>");
+            out.println("<li><a href=juros-composto>Juros Compostos</a></li>");
+            out.println("</ul>"); 
+            out.println("<div class=\"container\">");
+            out.println("<h2>Juros Compostos</h2>");
+            out.println("<table class=table>");
+            out.println("<thead>");
             out.println("<tr>");
             out.println("<th>Mês</th>");
             out.println("<th>Montante</th>");
             out.println("</tr>");           
-            out.println("</thead>");           
+            out.println("</thead>");
+            out.println("<tbody>");
             out.println("<tr>");
             out.println("<th>1</th>");
-            out.println("<td>"+fmt.format(montante)+"</td>");
+            out.println("<td>R$ "+fmt.format(montante)+"</td>");
             out.println("</tr>"); 
            
             for (int i = 2; i <= periodoMensal; i++) {
@@ -84,9 +102,13 @@ public class MontanteJurosComposto extends HttpServlet {
                 montante = valorInicial*juros;
                 out.println("<tr>");
                 out.println("<th>"+i+"</th>");
-                out.println("<td>"+fmt.format(montante)+"</td>");
+                out.println("<td>R$ "+fmt.format(montante)+"</td>");
                 out.println("</tr>");  
             }
+            out.println("</tbody>"); 
+            out.println("</table></br>"); 
+            out.println("<a href='juros-composto' class=\"btn btn-outline-success\">Voltar</a> &nbsp");
+            out.println("<a href='home' class=\"btn btn-outline-success\">Home</a></br> ");
             out.println("</body>");
             out.println("</html>");
         }catch (Exception e) {

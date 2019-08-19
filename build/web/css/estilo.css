@@ -62,11 +62,12 @@ p {
     padding: 1.5em 0;
 }
 
-form a {
+/*form a {
+    text-align: center;
     text-decoration: none;
     color: #000;
     display: inline-block;
-    padding:  10px;
+    padding:  30px;
     margin: 50px 8%;
     border: 2px solid #66ff6b !important;
     border-radius: 10px;
@@ -77,24 +78,21 @@ form .bt1 {
     text-decoration: none;
     color: #000;
     display: inline-block;
-    float: right;
-    padding: 10px;
-    margin: 50px 45%;
+    padding:  30px;
+    margin: 50px 50%;
     border: 2px solid #66ff6b !important;
     border-radius: 10px;
 }
 
 form a:hover {
     text-align: center;
-    text-decoration: none;
     background-color: #66FF66;
-    color:#000;
-    border: 1px solid #66FF66;
+    color:#fff;
+    border: 1px solid #66FF66 !important;
     border-radius: 5px;
-    box-shadow: 5px #000 !important;
 }
 
-/*.btn {
+.btn {
     transition: .5s;
 }*/
 

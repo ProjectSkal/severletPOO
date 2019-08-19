@@ -40,11 +40,11 @@ public class MontanteJurosSimplesServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Montante Juros Simples</title>");  
+            out.println("<title>Integrantes - Juros POO</title>");    
             out.println("<link rel=\"shortcut icon\" href=\"imagens/images.png\">");
             out.println("<link rel=\"stylesheet\" href=\"css/bootstrap.min.css\">");
             out.println("<link rel=\"stylesheet\" href=\"css/estilo.css\">");
-            out.println("<meta name=viewport content=width=device-width, initial-scale=1.0>");          
+            out.println("<meta name=viewport content=width=device-width, initial-scale=1.0>");
             out.println("</head>");
             double valorPresente =0;
             double taxaMensal =0;
@@ -65,11 +65,17 @@ public class MontanteJurosSimplesServlet extends HttpServlet {
             double txjuros = taxaMensal/100;   
             montante = valorPresente*(1 + (txjuros*periodoMensal));
             out.println("<body>");
-            out.println("<h2> Montante Juros Simples</h2>");
-            out.println ("<form>");
-            out.println("<h2>Valor Montante: R$ "+fmt.format(montante)+"</h2>");
-            out.println("<a href='index.html' class=btn>Voltar</a>");
-            out.println ("</form>");
+            out.println(" <ul>");
+            out.println("<li><a href='index.html'>Juros</a></li>");
+            out.println("<li><a href=home>Home</a></li>");
+            out.println("<li><a href=juros-simples>Juros Simples</a></li>");
+            out.println("<li><a href=juros-composto>Juros Compostos</a></li>");
+            out.println("</ul>"); 
+            out.println("<div class=\"container\">");
+            out.println("<h2>Juros Simples</h2>");
+            out.println("<p>Valor Montante: R$ "+fmt.format(montante)+"</p>");
+            out.println("<a href='juros-simples' class=\"btn btn-outline-success\">Voltar</a> &nbsp");
+            out.println("<a href='home' class=\"btn btn-outline-success\">Home</a></br> ");
             out.println("</body>");
             out.println("</html>");
         }catch (Exception e) {
