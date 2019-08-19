@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.text.DecimalFormat;
 
 /**
  *
@@ -33,19 +34,14 @@ public class MontanteJurosComposto extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-//            int valorInicial = Integer.parseInt(request.getParameter("valorInicial"));
-//            double taxaMensal = Double.parseDouble(request.getParameter("taxaMensal"));
-//            double periodoMensal = Integer.parseInt(request.getParameter("periodoMensal"));
-            int vi =100;
-            double dm = 0;
-            double tx = 0.06;
-            int pm = 2;
+            DecimalFormat fmt = new DecimalFormat("0.00");
+            double valorInicial = Integer.parseInt(request.getParameter("valorInicial"));
+            double taxaMensal = Double.parseDouble(request.getParameter("taxaMensal"));
+            double periodoMensal = Integer.parseInt(request.getParameter("periodo"));
             double montante = 0;
+            double tx = taxaMensal/100;   
             double juros = tx+1;
-            for (int i = 1; i < pm; i++) {
-                juros *= juros;
-            }
-            montante = vi*juros;
+            montante = valorInicial*juros;
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -53,7 +49,25 @@ public class MontanteJurosComposto extends HttpServlet {
             out.println("<title>Servlet MontanteJurosComposto</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet MontanteJurosComposto at"+request.getParameter("valorInicial")+" </h1>");
+            out.println("<table border='1'>");
+            out.println("<tr>");
+            out.println("<th>Mês</th>");
+            out.println("<th>Montante</th>");
+            out.println("</tr>");             
+            out.println("<tr>");
+            out.println("<th>1</th>");
+            out.println("<td>"+montante+"</td>");
+            out.println("</tr>"); 
+           
+            for (int i = 2; i <= periodoMensal; i++) {
+                juros *= juros;
+                
+                montante = valorInicial*juros;
+                out.println("<tr>");
+                out.println("<th>"+i+"</th>");
+                out.println("<td>"+fmt.format(montante)+"</td>");
+                out.println("</tr>");  
+            }
             out.println("</body>");
             out.println("</html>");
         }

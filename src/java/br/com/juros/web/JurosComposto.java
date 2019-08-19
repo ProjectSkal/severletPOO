@@ -49,9 +49,9 @@ public class JurosComposto extends HttpServlet {
             out.println("<div class=\"form-group\">");
             out.println("<label for=\"valorInicial\">Valor inicial</label>");
             out.println("<input type=\"number\" style=\"width:300px;\" class=\"form-control\" name=\"valorInicial\" \">");
-            out.println("<label for=\"valorInicial\">Taxa de juros mensal(%)</label>");
-            out.println("<input type=\"number\" style=\"width:300px;\" class=\"form-control\" name=\"taxaJuros\" \">");
-            out.println("<label for=\"valorInicial\">Período(mês)</label>");
+            out.println("<label for=\"taxaMensal\">Taxa de juros mensal(%)</label>");
+            out.println("<input type=\"number\" style=\"width:300px;\" class=\"form-control\" name=\"taxaMensal\" \">");
+            out.println("<label for=\"periodo\">Período(mês)</label>");
             out.println("<input type=\"number\" style=\"width:300px;\" class=\"form-control\" name=\"periodo\" \">");
             out.println("<input type=\"submit\" style=\"margin-left:0px;\" value=\"submit\" />");            
             out.println("</form>");
