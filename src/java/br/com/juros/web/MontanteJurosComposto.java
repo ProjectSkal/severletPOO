@@ -35,33 +35,52 @@ public class MontanteJurosComposto extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             DecimalFormat fmt = new DecimalFormat("0.00");
-            double valorInicial = Integer.parseInt(request.getParameter("valorInicial"));
-            double taxaMensal = Double.parseDouble(request.getParameter("taxaMensal"));
-            double periodoMensal = Integer.parseInt(request.getParameter("periodo"));
-            double montante = 0;
-            double tx = taxaMensal/100;   
-            double juros = tx+1;
-            montante = valorInicial*juros;
+
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet MontanteJurosComposto</title>");            
+            out.println("<title>Montante Juros Composto</title>");
+            out.println("<link rel=\"shortcut icon\" href=\"imagens/images.png\">");
+            out.println("<link rel=\"stylesheet\" href=\"css/bootstrap.min.css\">");
+            out.println("<link rel=\"stylesheet\" href=\"css/estilo.css\">");
+            out.println("<meta name=viewport content=width=device-width, initial-scale=1.0>");          
             out.println("</head>");
+            double valorInicial =0;
+            double taxaMensal =0;
+            double periodoMensal =0;
+            try {
+                valorInicial = Double.parseDouble(request.getParameter("valorInicial"));
+                taxaMensal = Double.parseDouble(request.getParameter("taxaMensal"));
+                periodoMensal = Integer.parseInt(request.getParameter("periodo"));            
+            } catch (Exception e) {
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('Preencha todos os campos');");
+                out.println("location='juros-composto';");
+                out.println("</script>");
+//                response.sendRedirect("juros-composto");
+            }
+
+            double montante = 0;
+            double tx = taxaMensal/100;   
+            double juros = tx+1;
+            tx = tx+1;
+            montante = valorInicial*juros;
             out.println("<body>");
-            out.println("<table border='1'>");
+            out.println("<table class=\"table table-striped\";border='1'>");
+            out.println("<thead class=\"thead-dark\">");
             out.println("<tr>");
             out.println("<th>Mês</th>");
             out.println("<th>Montante</th>");
-            out.println("</tr>");             
+            out.println("</tr>");           
+            out.println("</thead>");           
             out.println("<tr>");
             out.println("<th>1</th>");
-            out.println("<td>"+montante+"</td>");
+            out.println("<td>"+fmt.format(montante)+"</td>");
             out.println("</tr>"); 
            
             for (int i = 2; i <= periodoMensal; i++) {
-                juros *= juros;
-                
+                juros *= tx;
                 montante = valorInicial*juros;
                 out.println("<tr>");
                 out.println("<th>"+i+"</th>");
@@ -70,6 +89,8 @@ public class MontanteJurosComposto extends HttpServlet {
             }
             out.println("</body>");
             out.println("</html>");
+        }catch (Exception e) {
+            
         }
     }
 

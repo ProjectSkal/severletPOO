@@ -48,12 +48,12 @@ public class JurosComposto extends HttpServlet {
             out.println("<form name=\"juros-composto-form\" method=\"post\" action=\"montante-juros-composto\">");
             out.println("<div class=\"form-group\">");
             out.println("<label for=\"valorInicial\">Valor inicial</label>");
-            out.println("<input type=\"number\" style=\"width:300px;\" class=\"form-control\" name=\"valorInicial\" \">");
+            out.println("<input type=\"number\" style=\"width:300px;\" step=\"any\" class=\"form-control\" name=\"valorInicial\" \">");
             out.println("<label for=\"taxaMensal\">Taxa de juros mensal(%)</label>");
-            out.println("<input type=\"number\" style=\"width:300px;\" class=\"form-control\" name=\"taxaMensal\" \">");
+            out.println("<input type=\"number\" style=\"width:300px;\" step=\"any\" class=\"form-control\" name=\"taxaMensal\" \">");
             out.println("<label for=\"periodo\">Período(mês)</label>");
             out.println("<input type=\"number\" style=\"width:300px;\" class=\"form-control\" name=\"periodo\" \">");
-            out.println("<input type=\"submit\" style=\"margin-left:0px;\" value=\"submit\" />");            
+            out.println("<br/><input type=\"Submit\" class=btn style=\"margin-left:0px;\" value=\"submit\" />");            
             out.println("</form>");
             out.println("</body>");
             out.println("</html>");
