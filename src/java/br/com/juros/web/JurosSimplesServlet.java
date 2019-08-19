@@ -53,7 +53,7 @@ public class JurosSimplesServlet extends HttpServlet {
             out.println("<input type=\"number\" style=\"width:300px;\" step=\"any\" class=\"form-control\" name=\"taxaMensal\" \">");
             out.println("<label for=\"periodo\">Período(mês)</label>");
             out.println("<input type=\"number\" style=\"width:300px;\" class=\"form-control\" name=\"periodo\" \">");
-            out.println("<br/><input type=\"Submit\" class=btn style=\"margin-left:0px;\" value=\"Calcular\" />");
+            out.println("<input type=\"Submit\" class=btn style=\"margin-left:0px;\" value=\"Calcular\" />");
             out.println("<a href='index.html' class=btn>Voltar</a>");           
             out.println("</form>");
             out.println("</body>");
