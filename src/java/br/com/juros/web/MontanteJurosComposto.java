@@ -69,7 +69,7 @@ public class MontanteJurosComposto extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Integrantes - Juros POO</title>");    
+            out.println("<title>Integrantes - Juros</title>");    
             out.println("<link rel=\"shortcut icon\" href=\"imagens/images.png\">");
             out.println("<link rel=\"stylesheet\" href=\"css/bootstrap.min.css\">");
             out.println("<link rel=\"stylesheet\" href=\"css/estilo.css\">");
